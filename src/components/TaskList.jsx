@@ -1,9 +1,14 @@
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { deleteTask } from "../stateManagement/slicers/taskSlice";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPlus } from '@fortawesome/free-solid-svg-icons'
+
 
 export const TaskList = () => {
     const taskState = useSelector(state=>state.tasks)
+
+    
 
     const dispatch = useDispatch()
   
@@ -31,9 +36,9 @@ export const TaskList = () => {
           
           <div className="card w-96 bg-base-200 max-h-56 shadow-xl" >
             <div className="card-body">
-              <h3 className="text-xl">Agregar tarea :</h3>
-              <Link to="/create-task" className="btn btn-primary text-8xl ease-in duration-400 m-auto rounded-full text-center h-32 w-32 border-none pb-4">
-                +
+              <h3 className="text-xl mb-2">Agregar tarea :</h3>
+              <Link to="/create-task" className="btn btn-primary text-5xl ease-in duration-400 m-auto rounded-full text-center h-32 w-32 border-none p-4">
+                <FontAwesomeIcon icon={faPlus}/>
               </Link>  
             </div>
           </div>

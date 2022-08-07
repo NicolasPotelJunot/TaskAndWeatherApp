@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { addTask, editTask } from "../stateManagement/slicers/taskSlice";
 import { v4 as uuid } from "uuid";
 import { useNavigate, useParams } from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCircleArrowLeft } from '@fortawesome/free-solid-svg-icons'
 
 export const TaskForm = () => {
 
@@ -53,18 +55,19 @@ export const TaskForm = () => {
 
   return (
     <div className='h-screen flex justify-center justify-items-center items-center'>
-      <div>
+      <div className='bg-slate-800 p-6 rounded-xl animate__animated animate__headShake'>
         
         <button 
           onClick={handleReturn}
-          className='btn btn-primary'
-          >Atrás
+          className=' btn btn-primary px-2 rounded-full text-3xl'
+          >
+          <FontAwesomeIcon icon={faCircleArrowLeft} />
         </button>
 
-        <form className='px-6 py-3 bg-slate-800 border-2 border-violet-600 rounded-xl w-96 flex flex-col my-2' onSubmit={handleSubmit}>
+        <form className='w-96 flex flex-col my-2' onSubmit={handleSubmit}>
           <input className='input required input-bordered input-primary w-full my-3' name="title" type="text" placeholder='Agregar tarea' onChange={handleChange} value={task.title}/>
           <textarea required className='textarea textarea-primary my-3' cols="30" rows="8" name="description" placeholder='description' onChange={handleChange} value={task.description}></textarea>
-          <button className='btn btn-primary my-3'>Guardar</button>
+          <button className='btn btn-primary my-3 animate__animated animate__flipInX'>Guardar</button>
         </form>
 
       </div>
