@@ -1,5 +1,6 @@
 import React from 'react'
 import './index.css'
+import 'animate.css';
 import AppRoutes from './routes/appRoutes.jsx'
 // redux
 import { store } from './stateManagement/store/store'
