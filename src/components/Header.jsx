@@ -6,12 +6,13 @@ export const Header = () => {
   const taskState = useSelector(state=>state.tasks)
 
   return (
-    <header className="flex p-10 h-36 bg-base-200 rounded-xl">
 
-        <h1 className="text-4xl font-bold mx-3">
+    <header className="flex px-2 py-2 bg-base-200 rounded-xl justify-between">
+
+        <h1 className="text-lg font-bold flex items-center bg-white px-4 rounded-xl ">
           
           {
-            taskState.length ===0 ? `No tenes ninguna tarea pendiente`
+            taskState.length ===0 ? `No tenes tareas pendiente`
             :            
             taskState.length ===1 ? `Tenes ${taskState.length} tarea por hacer`
             :
@@ -20,7 +21,9 @@ export const Header = () => {
         
         </h1>
 
-        <Link to="/create-task" className="btn btn-primary ease-in duration-400 ml-24">Crea una nueva tarea</Link>  
+        <Link to="/create-task" className="btn btn-primary text-xs ease-in duration-400 rounded-2xl">
+          <p className="text-3xl flex items-center mb-2 mr-2">+</p>Crear tarea
+        </Link>  
 
     </header>
   )

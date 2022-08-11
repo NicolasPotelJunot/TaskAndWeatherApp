@@ -3,12 +3,11 @@ import { useSelector, useDispatch } from "react-redux";
 import { deleteTask } from "../stateManagement/slicers/taskSlice";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus } from '@fortawesome/free-solid-svg-icons'
+import {Header} from '../components/Header'
 
 
 export const TaskList = () => {
     const taskState = useSelector(state=>state.tasks)
-
-    
 
     const dispatch = useDispatch()
   
@@ -17,32 +16,36 @@ export const TaskList = () => {
     }
   
     return (        
-    
-        <div className="p-10 row-span-4 grid grid-cols-5 gap-5 my-3">
-          {
-            taskState.map(task=>(
-              <div className="card w-96 max-h-56 bg-base-200 shadow-xl" key={task.id}>
-                <div className="card-body">
-                  <h3 className="card-title font-bold">{task.title}</h3>
-                  <p className="text-lg">{task.description}</p>
-                  <div className="card-actions justify-end mt-5">
-                     <button onClick={()=> handleDelete(task.id)} className="btn btn-secondary">delete</button>
-                     <Link className="btn btn-accent" to={`/edit-task/${task.id}`}>Editar</Link>
+      <div className="max-h-full">
+        <Header />
+        <div className="flex flex-col bg-base-200 mt-6 pl-5 rounded-xl">
+            <div className=" h-96 overflow-y-scroll">
+              {
+                taskState.map(task=>(
+                  <div className="grid grid-cols-3 gap-5 justify-between border-b-2 border-slate-300 px-3 py-5" key={task.id}>
+                    <div className="col-span-2 grid items-center">
+                      <h3 className="font-bold">{task.title}</h3>
+                      <p className="text-lg">{task.description}</p>
+                    </div>
+                    <div className="col-span-1 grid grid-cols-2 gap-2 justify-end items-center">
+                      <Link className="btn btn-accent rounded-xl" to={`/edit-task/${task.id}`}>Editar</Link>
+                      <button onClick={()=> handleDelete(task.id)} className="btn btn-error hover:bg-red-500 rounded-xl">delete</button>
+                    </div>
                   </div>
-                </div>
-              </div>
-            ))
-          }
-          
-          <div className="card w-96 bg-base-200 max-h-56 shadow-xl" >
-            <div className="card-body">
-              <h3 className="text-xl mb-2">Agregar tarea :</h3>
-              <Link to="/create-task" className="btn btn-primary text-5xl ease-in duration-400 m-auto rounded-full text-center h-32 w-32 border-none p-4">
-                <FontAwesomeIcon icon={faPlus}/>
-              </Link>  
+                ))
+              }
             </div>
-          </div>
-  
+            
+            <div className="card mt-5">
+              <div className="card-body">
+                <Link to="/create-task" className="btn btn-primary text-4xl ease-in duration-400 m-auto rounded-full text-center h-32 w-32 border-none p-4">
+                  <FontAwesomeIcon icon={faPlus}/>
+                </Link>  
+              </div>
+            </div>
+    
+        </div>
+
       </div>
     )
 }

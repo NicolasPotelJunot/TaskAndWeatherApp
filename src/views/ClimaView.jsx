@@ -3,8 +3,8 @@ import { Card } from '../components/Card'
 import { ClimaForm } from '../components/ClimaForm'
 
 
-export const ClimaView = () => {
-    
+export const ClimaView = () => {    
+
     
     let urlWeather = `https://api.openweathermap.org/data/2.5/weather?appid=88dc9b4625213920bd30a8fe5ca04ef4&lang=es`
     let urlCity = `&q=`
@@ -24,6 +24,7 @@ export const ClimaView = () => {
         setLocation(loc)
 
 
+        
         //weather
         urlWeather = urlWeather + urlCity + loc;
 
@@ -61,9 +62,9 @@ export const ClimaView = () => {
 
 
   return (
-    <div className='animate__animated animate__bounce'>
-        <div className='text-center'>
-            <h2 className='text-6xl font-bold my-10'>Busca el clima de tu ciudad</h2>
+    <div className='flex flex-col'>
+        <div className='bg-base-200 grid gap-5 p-5 text-center rounded-xl mb-5'>
+            <h2 className='text-4xl font-bold '>Busca el clima de tu ciudad</h2>
             <ClimaForm newLocation = {getLocation}/>
         </div>
         <Card

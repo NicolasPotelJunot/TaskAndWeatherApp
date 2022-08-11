@@ -67,7 +67,7 @@ export const TaskForm = () => {
         <form className='w-96 flex flex-col my-2' onSubmit={handleSubmit}>
           <input className='input required input-bordered input-primary w-full my-3' name="title" type="text" placeholder='Agregar tarea' onChange={handleChange} value={task.title}/>
           <textarea required className='textarea textarea-primary my-3' cols="30" rows="8" name="description" placeholder='description' onChange={handleChange} value={task.description}></textarea>
-          <button className='btn btn-primary my-3 animate__animated animate__flipInX'>Guardar</button>
+          <button className='btn btn-primary my-3 '>Guardar</button>
         </form>
 
       </div>

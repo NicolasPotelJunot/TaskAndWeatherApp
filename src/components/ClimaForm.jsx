@@ -1,8 +1,8 @@
 import { useState } from "react";
 
-export const ClimaForm = ({newLocation = ""}) => {
+export const ClimaForm = ({newLocation = "cordoba"}) => {
 
-    const [city, setCity] = useState("")
+    const [city, setCity] = useState("cordoba")
     
     const handleSubmit= (e)=>{
         e.preventDefault();
@@ -14,14 +14,14 @@ export const ClimaForm = ({newLocation = ""}) => {
     }
 
   return (
-    <form onSubmit={handleSubmit} className='form-control mb-14'>
+    <form onSubmit={handleSubmit} className='form-control w-full'>
       <div className="input-group flex justify-center">
 
         <input 
             type="text" 
             placeholder='Agrega una Ciudad'
             onChange={e=>setCity(e.target.value)} 
-            className='input input-bordered w-3/6 text-3xl'
+            className='input input-info w-full text-3xl'
         />
             
         <button type='submit' className="btn btn-primary">Buscar</button>
