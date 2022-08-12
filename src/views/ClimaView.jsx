@@ -18,12 +18,10 @@ export const ClimaView = () => {
     const [location, setLocation] = useState("")
 
 
-    const getLocation = async(loc)=>{
+    const getLocation = async(loc= "cordoba")=>{
 
         setLoading(true)
         setLocation(loc)
-
-
         
         //weather
         urlWeather = urlWeather + urlCity + loc;

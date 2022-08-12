@@ -7,7 +7,7 @@ import {Header} from '../components/Header'
 
 
 export const TaskList = () => {
-    const taskState = useSelector(state=>state.tasks)
+    const taskState = useSelector(state=>state.tasks.tasks)
 
     const dispatch = useDispatch()
   
