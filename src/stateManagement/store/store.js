@@ -11,6 +11,7 @@ import {
   PURGE,
   REGISTER,
 } from 'redux-persist'
+
 import storage from 'redux-persist/lib/storage'
 
 
@@ -19,6 +20,7 @@ const persistConfig = {
   version: 1,
   storage,
 }
+
 const persistedReducer = persistReducer(persistConfig, taskSlice)
 
 export const store = configureStore({

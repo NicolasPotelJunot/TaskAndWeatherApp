@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 
 export const Header = () => {
 
-  const taskState = useSelector(state=>state.tasks)
+  const taskState = useSelector(state=>state.tasks.tasks)
 
   return (
 
@@ -12,7 +12,7 @@ export const Header = () => {
         <h1 className="text-lg font-bold flex items-center bg-white px-4 rounded-xl ">
           
           {
-            taskState.length ===0 ? `No tenes tareas pendiente`
+            taskState.length === 0 ? `No tenes tareas pendientes`
             :            
             taskState.length ===1 ? `Tenes ${taskState.length} tarea por hacer`
             :

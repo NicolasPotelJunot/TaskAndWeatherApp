@@ -12,6 +12,5 @@ export const wheatherSlice = createSlice({
     }
 });
 
-
 export const { changeCity } = wheatherSlice.actions;
 export default wheatherSlice.reducer
