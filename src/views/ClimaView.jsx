@@ -1,8 +1,6 @@
 import React, { useState } from 'react'
-import { useEffect } from 'react'
 import { Card } from '../components/Card'
 import { ClimaForm } from '../components/ClimaForm'
-import { useSelector } from "react-redux";
 
 
 export const ClimaView = () => {    

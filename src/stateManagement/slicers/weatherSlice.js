@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 export const wheatherSlice = createSlice({
     name: 'name',
     initialState:{
-        name: "hola"
+        name: ""
    },
     reducers: {
          changeCity: (state, action ) => {            

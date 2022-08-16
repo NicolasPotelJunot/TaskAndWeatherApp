@@ -1,4 +1,5 @@
 import { Spinners } from './Spinners'
+import {useSelector} from "react-redux";
 
 export const Card = ({
     showData,
@@ -41,6 +42,7 @@ export const Card = ({
         forecastDate9 = forecast.list[3].dt_txt.substring(8, 10) + '/' + forecast.list[3].dt_txt.substring(5, 7) + '/' + forecast.list[3].dt_txt.substring(0, 4) + ' ' +  forecast.list[3].dt_txt.substring(11, 13);
     }
 
+    const city = useSelector(state=>state.city.name.toUpperCase())
 
   return (
     <div className='animate__animated animate__zoomInDown'>
@@ -62,14 +64,17 @@ export const Card = ({
                             </div>
                         </div>
 
-                        <div className='grid gap-2 content-center text-lg'>
+                        <div className='grid justify-between'>
+                            <h3 className='text-violet-600 font-bold text-5xl my-auto border-b-4 pb-5 border-violet-500'>{city}</h3>    
+                            <div className='grid gap-2 content-center text-lg'>
 
-                            <h5 className="bg-white rounded-xl px-3 font-bold text-violet-600">Temperatura máxima: {(weather.main.temp_max - 273.15).toFixed(1)}ºC</h5>
-                            <h5 className="bg-white rounded-xl px-3 font-bold text-violet-600">Temperatura mínima: {(weather.main.temp_min - 273.15).toFixed(1)}ºC</h5>
-                            <h5 className="bg-white rounded-xl px-3 font-bold text-violet-600">sensación térmica: {(weather.main.feels_like- 273.15).toFixed(1)}ºC</h5>
-                            <h5 className="bg-white rounded-xl px-3 font-bold text-violet-600">Humedad: {weather.main.humidity}%</h5>
-                            <h5 className="bg-white rounded-xl px-3 font-bold text-violet-600">Velocidad del viento: {weather.wind.speed}m/s</h5>
+                                <h5 className="bg-white rounded-xl px-3 font-bold text-violet-600">Temperatura máxima: {(weather.main.temp_max - 273.15).toFixed(1)}ºC</h5>
+                                <h5 className="bg-white rounded-xl px-3 font-bold text-violet-600">Temperatura mínima: {(weather.main.temp_min - 273.15).toFixed(1)}ºC</h5>
+                                <h5 className="bg-white rounded-xl px-3 font-bold text-violet-600">sensación térmica: {(weather.main.feels_like- 273.15).toFixed(1)}ºC</h5>
+                                <h5 className="bg-white rounded-xl px-3 font-bold text-violet-600">Humedad: {weather.main.humidity}%</h5>
+                                <h5 className="bg-white rounded-xl px-3 font-bold text-violet-600">Velocidad del viento: {weather.wind.speed}m/s</h5>
 
+                            </div>
                         </div>
 
 

@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useState } from "react";
 import { useDispatch, useSelector} from "react-redux";
 import { changeCity } from "../stateManagement/slicers/weatherSlice";
@@ -9,10 +10,18 @@ export const ClimaForm = ({newLocation = ""}) => {
 
   const dispatch = useDispatch()
 
+  useEffect(() => {
+    if (city) {
+      newLocation(city)
+    }else{
+      newLocation(null)
+    }
+  }, [city])
+  
+
   const handleSubmit= (e)=>{
     e.preventDefault()
     dispatch(changeCity(cityState))
-    newLocation(city)
   }
   
   const handleChange = (e)=>{
