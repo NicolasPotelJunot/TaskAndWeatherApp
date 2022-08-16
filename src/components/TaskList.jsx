@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { deleteTask } from "../stateManagement/slicers/taskSlice";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPlus } from '@fortawesome/free-solid-svg-icons'
+import { faPlus, faTrashCan, faPen } from '@fortawesome/free-solid-svg-icons'
 import {Header} from '../components/Header'
 
 
@@ -27,9 +27,10 @@ export const TaskList = () => {
                       <h3 className="font-bold">{task.title}</h3>
                       <p className="text-lg">{task.description}</p>
                     </div>
-                    <div className="col-span-1 grid grid-cols-2 gap-2 justify-end items-center">
-                      <Link className="btn btn-accent rounded-xl" to={`/edit-task/${task.id}`}>Editar</Link>
-                      <button onClick={()=> handleDelete(task.id)} className="btn btn-error hover:bg-red-500 rounded-xl">delete</button>
+                    <div className="col-span-1 flex justify-end items-center">
+                      <Link className="btn btn-accent rounded-full mx-1" to={`/edit-task/${task.id}`}><FontAwesomeIcon icon={faPen}/></Link>
+                      <button onClick={()=> handleDelete(task.id)} className="btn btn-error hover:bg-red-500 rounded-full mx-1"><FontAwesomeIcon icon={faTrashCan}/></button>
+                      
                     </div>
                   </div>
                 ))

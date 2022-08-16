@@ -1,5 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit'
 import taskSlice from "../slicers/taskSlice";
+import weatherSlice from "../slicers/weatherSlice";
+
 
 // persist
 import {
@@ -21,10 +23,17 @@ const persistConfig = {
   storage,
 }
 
+const persistConfig2 = {
+  key: 'name',
+  version: 1,
+  storage,
+}
+
 const persistedReducer = persistReducer(persistConfig, taskSlice)
+const persistedReducer2 = persistReducer(persistConfig2, weatherSlice)
 
 export const store = configureStore({
-  reducer: {tasks:persistedReducer},
+  reducer: {tasks:persistedReducer, city:persistedReducer2},
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: {

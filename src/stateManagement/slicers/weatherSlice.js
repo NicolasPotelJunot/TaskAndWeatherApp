@@ -1,13 +1,13 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 export const wheatherSlice = createSlice({
-    name: 'wheather',
-    initialState: {
-         city: "cordoba"
-    },
+    name: 'name',
+    initialState:{
+        name: "hola"
+   },
     reducers: {
-         changeCity: (state, action ) => {
-                state = action.payload
+         changeCity: (state, action ) => {            
+            state.name = action.payload
         },
     }
 });

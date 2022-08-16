@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
+import { useEffect } from 'react'
 import { Card } from '../components/Card'
 import { ClimaForm } from '../components/ClimaForm'
+import { useSelector } from "react-redux";
 
 
 export const ClimaView = () => {    
@@ -16,9 +18,8 @@ export const ClimaView = () => {
     const [loading, setLoading] = useState(false)
     const [show, setShow] = useState(false)
     const [location, setLocation] = useState("")
-
-
-    const getLocation = async(loc= "cordoba")=>{
+        
+    const getLocation = async(loc)=>{
 
         setLoading(true)
         setLocation(loc)
@@ -58,12 +59,11 @@ export const ClimaView = () => {
 
     }
 
-
   return (
     <div className='flex flex-col'>
         <div className='bg-base-200 grid gap-5 p-5 text-center rounded-xl mb-5'>
             <h2 className='text-4xl font-bold '>Busca el clima de tu ciudad</h2>
-            <ClimaForm newLocation = {getLocation}/>
+            <ClimaForm newLocation = {getLocation} />
         </div>
         <Card
             showData = {show}
