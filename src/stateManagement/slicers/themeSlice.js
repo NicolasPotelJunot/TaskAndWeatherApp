@@ -2,14 +2,14 @@ import { createSlice } from '@reduxjs/toolkit';
 
 export const themeSlice = createSlice({
     name: 'theme',
-    initialState: false,
+    initialState: {
+      theme: "corporate"
+    },
     reducers: {
          changeTheme: (state) => {
-                if (state===false) {
-                    state(true)
-                  }else{
-                    setTheme(false)
-                  }
+            (state.theme==="corporate")
+                ? state.theme= "dark"
+                : state.theme= "corporate"            
         },
     }
 });
