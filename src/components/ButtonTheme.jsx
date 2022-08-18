@@ -11,7 +11,7 @@ export const ButtonTheme = () => {
       }
     
   return (
-    <label className="swap swap-rotate h-14">
+    <label className="swap swap-rotate h-14 text-warning">
 
         <input type="checkbox" onClick={handleTheme}/>
 

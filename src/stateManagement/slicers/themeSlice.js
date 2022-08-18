@@ -3,13 +3,13 @@ import { createSlice } from '@reduxjs/toolkit';
 export const themeSlice = createSlice({
     name: 'theme',
     initialState: {
-      theme: "corporate"
+      theme: "cmyk"
     },
     reducers: {
          changeTheme: (state) => {
-            (state.theme==="corporate")
-                ? state.theme= "dark"
-                : state.theme= "corporate"            
+            (state.theme==="cmyk")
+                ? state.theme= "night"
+                : state.theme= "cmyk"            
         },
     }
 });
