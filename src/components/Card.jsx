@@ -77,10 +77,9 @@ export const Card = ({
                             </div>
                         </div>
 
-
                     </div>
 
-                    <div className='bg-base-200 pt-3 pb-10 px-10 rounded-2xl'>
+                    <div className='bg-base-200 pt-3 pb-4 px-10 rounded-2xl'>
                         <h3 className='text-3xl font-bold text-center my-2 mb-8'>Clima en las próximas horas</h3>
 
                         <div className='grid grid-cols-3'>
