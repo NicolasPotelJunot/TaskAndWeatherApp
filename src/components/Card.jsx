@@ -55,7 +55,7 @@ export const Card = ({
                 <div className='w-full grid gap-4'>
                     {/* <h3 className=''>{forecast.city.name}</h3> */}
 
-                    <div className='bg-base-200 grid grid-cols-2 pt-3 px-10 rounded-2xl'>
+                    <div className='bg-base-200 grid grid-cols-2 py-4 px-10 rounded-2xl'>
 
                         <div className='grid justify-between items-center pb-5'>
                             <h3 className='text-3xl pb-2 text-center font-bold'>Clima Actual</h3>
@@ -74,7 +74,7 @@ export const Card = ({
 
                                 <h5 className="bg-white rounded-xl px-3 font-bold text-primary">Temperatura máxima: {(weather.main.temp_max - 273.15).toFixed(1)}ºC</h5>
                                 <h5 className="bg-white rounded-xl px-3 font-bold text-primary">Temperatura mínima: {(weather.main.temp_min - 273.15).toFixed(1)}ºC</h5>
-                                <h5 className="bg-white rounded-xl px-3 font-bold text-primary">sensación térmica: {(weather.main.feels_like- 273.15).toFixed(1)}ºC</h5>
+                                <h5 className="bg-white rounded-xl px-3 font-bold text-primary">Sensación térmica: {(weather.main.feels_like- 273.15).toFixed(1)}ºC</h5>
                                 <h5 className="bg-white rounded-xl px-3 font-bold text-primary">Humedad: {weather.main.humidity}%</h5>
                                 <h5 className="bg-white rounded-xl px-3 font-bold text-primary">Velocidad del viento: {weather.wind.speed}m/s</h5>
 

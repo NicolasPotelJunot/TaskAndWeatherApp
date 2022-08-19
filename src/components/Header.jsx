@@ -1,9 +1,11 @@
-import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { openFormModal } from "../stateManagement/slicers/formSlice";
 
 export const Header = () => {
 
   const taskState = useSelector(state=>state.tasks.tasks)
+
+  const dispatch = useDispatch()
 
   return (
 
@@ -21,9 +23,12 @@ export const Header = () => {
         
         </h1>
 
-        <Link to="/create-task" className="btn btn-primary text-xs ease-in duration-400 rounded-2xl">
+        <button 
+        onClick={()=>dispatch(openFormModal(false))}
+        className="btn btn-primary text-xs ease-in duration-400 rounded-2xl"
+        >
           <p className="text-3xl flex items-center mb-2 mr-2">+</p>Crear tarea
-        </Link>  
+        </button>  
 
     </header>
   )

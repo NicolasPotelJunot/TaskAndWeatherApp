@@ -34,9 +34,9 @@ export const ClimaForm = ({newLocation = ""}) => {
 
         <input 
             type="text" 
-            placeholder='Ex: Cordoba'
+            placeholder='El clima en...'
             onChange={handleChange}
-            className='input input-info w-full text-xl'
+            className='input input-bordered w-full text-xl'
         />
             
         <button type='submit' className="btn btn-primary">Buscar</button>
