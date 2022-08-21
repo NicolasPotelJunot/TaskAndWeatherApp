@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
-import { deleteTask } from "../stateManagement/slicers/taskSlice";
+import { deleteTask, editTask } from "../stateManagement/slicers/taskSlice";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus, faTrashCan, faPen } from '@fortawesome/free-solid-svg-icons'
 import {Header} from '../components/Header'
@@ -14,6 +14,11 @@ export const TaskList = () => {
   
     const handleDelete =(id)=>{
       dispatch(deleteTask(id))  
+    }
+
+    const handleEdit = (task) =>{
+      handleDelete(task.id) 
+      dispatch(openFormModal())
     }
   
     return (        
@@ -34,7 +39,7 @@ export const TaskList = () => {
                     </div>
                     <div className="col-span-1 flex justify-end items-center">
                       
-                      <button className="btn btn-success rounded-full mx-1"><FontAwesomeIcon icon={faPen}/></button>
+                      <button onClick={()=>handleEdit(task)} className="btn btn-success rounded-full mx-1"><FontAwesomeIcon icon={faPen}/></button>
                       <button onClick={()=> handleDelete(task.id)} className="btn btn-error hover:bg-red-500 rounded-full mx-1"><FontAwesomeIcon icon={faTrashCan}/></button>
                       
                     </div>

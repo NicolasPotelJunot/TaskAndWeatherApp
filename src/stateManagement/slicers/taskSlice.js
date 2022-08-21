@@ -9,17 +9,6 @@ export const taskSlice = createSlice({
             state.tasks.push(action.payload)
          },
 
-         editTask:(state,action)=>{
-            const {id,title,description} = action.payload
-            
-            const foundTask = state.tasks.find((task)=> task.id === id)
-
-            if(foundTask){
-                foundTask.title= title
-                foundTask.description= description
-            }
-         },
-
          deleteTask: (state,action)=>{
             // console.log(action.payload)
            const taskfound = state.tasks.find(task=>task.id === action.payload)

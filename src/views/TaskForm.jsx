@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from "react-redux";
-import { addTask, editTask } from "../stateManagement/slicers/taskSlice";
+import { addTask } from "../stateManagement/slicers/taskSlice";
 import { openFormModal } from "../stateManagement/slicers/formSlice";
 import { v4 as uuid } from "uuid";
-import { useNavigate, useParams } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCircleArrowLeft } from '@fortawesome/free-solid-svg-icons'
 import "./TaskForm.css";
@@ -18,9 +17,6 @@ export const TaskForm = () => {
   const form = useSelector(state=>state.form.modal)
   
   const dispatch = useDispatch()
-  const navigate = useNavigate()
-  const params = useParams()
-  const tasks = useSelector(state=>state.tasks)
 
   const handleChange = (e) =>{
     // console.log(e.target.name, e.target.value)
@@ -32,30 +28,21 @@ export const TaskForm = () => {
 
   const handleSubmit = (e)=>{
     e.preventDefault()
-
-    if(params.id){
-      dispatch(editTask(task))
-    }else{
+    
       dispatch(
         addTask({
         ...task,
         id: uuid(),
-      })
-    )
-    }    
-    navigate("/")
+      }) )  
 
     dispatch(openFormModal(false))
 
+    setTask({
+      title: null,
+      description: null,
+    })
+
   }
-
-  useEffect(() => {
-    if(params.id){
-      setTask(tasks.tasks.find(task=>task.id===params.id))      
-    }
-  }, [params.id,tasks])
-
-
 
   return (
     <>

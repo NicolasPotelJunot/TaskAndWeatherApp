@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 export const formSlice = createSlice({
     name: 'form',
     initialState: {
-         modal: false
+         modal: null
     },
     reducers: {
         openFormModal: (state) => {
