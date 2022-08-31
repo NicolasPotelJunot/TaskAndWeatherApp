@@ -3,6 +3,7 @@ import taskSlice from "../slicers/taskSlice";
 import weatherSlice from "../slicers/weatherSlice";
 import themeSlice from "../slicers/themeSlice";
 import formSlice from "../slicers/formSlice";
+import captureId from "../slicers/idSlice";
 
 
 // persist
@@ -43,13 +44,20 @@ const persistConfig4 = {
   storage,
 }
 
+const persistConfig5 = {
+  key: 'id',
+  version: 1,
+  storage,
+}
+
 const persistedReducer = persistReducer(persistConfig, taskSlice)
 const persistedReducer2 = persistReducer(persistConfig2, weatherSlice)
 const persistedReducer3 = persistReducer(persistConfig3, themeSlice)
 const persistedReducer4 = persistReducer(persistConfig4, formSlice)
+const persistedReducer5 = persistReducer(persistConfig5, captureId)
 
 export const store = configureStore({
-  reducer: {tasks:persistedReducer, city:persistedReducer2, theme:persistedReducer3, form:persistedReducer4},
+  reducer: {tasks:persistedReducer, city:persistedReducer2, theme:persistedReducer3, form:persistedReducer4, id:persistedReducer5},
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: {

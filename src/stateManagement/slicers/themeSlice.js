@@ -9,7 +9,7 @@ export const themeSlice = createSlice({
          changeTheme: (state) => {
             (state.theme==="cmyk")
                 ? state.theme= "night"
-                : state.theme= "cmyk"            
+                : state.theme= "cmyk"
         },
     }
 });

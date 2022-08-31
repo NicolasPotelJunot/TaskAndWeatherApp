@@ -52,25 +52,25 @@ export const Card = ({
     <div className='animate__animated animate__zoomInDown'>
         {
             showData === true ? (
-                <div className='w-full grid gap-4'>
+                <div className='w-full grid gap-1'>
                     {/* <h3 className=''>{forecast.city.name}</h3> */}
 
-                    <div className='bg-base-200 grid grid-cols-2 py-4 px-10 rounded-2xl'>
+                    <div className='bg-base-200 grid grid-cols-2 py-2 px-10 rounded-2xl'>
 
-                        <div className='grid justify-between items-center pb-5'>
-                            <h3 className='text-3xl pb-2 text-center font-bold'>Clima Actual</h3>
-                            <h3 className='text-7xl text-center pb-4 text-primary font-bold'>{(weather.main.temp- 273.15).toFixed(1)}ºC</h3> 
+                        <div className='grid justify-center items-center pb-5'>
+                            <h3 className='text-2xl pb-2 text-center font-bold'>Clima Actual</h3>
+                            <h3 className='text-5xl text-center pb-4 text-primary font-bold'>{(weather.main.temp- 273.15).toFixed(1)}ºC</h3> 
                             <div className='grid justify-center'>
-                                <div className='h-32 overflow-hidden flex justify-center items-center'>
-                                    <img src={iconUrl} alt="icon" className='h-52' /> 
+                                <div className='h-28 overflow-hidden flex justify-center items-center'>
+                                    <img src={iconUrl} alt="icon" className='h-40' /> 
                                 </div>
                                 <p className='bg-primary text-white rounded-xl mx-auto py-2 px-5'>{weather.weather[0].description}</p>
                             </div>
                         </div>
 
                         <div className='grid justify-between'>
-                            <h3 className='text-primary font-bold text-5xl my-auto pb-5 border-b-4 border-primary'>{city}</h3>    
-                            <div className='grid gap-2 content-center text-lg'>
+                            <h3 className='text-primary font-bold text-4xl my-auto pb-2 border-b-4 border-primary'>{city}</h3>    
+                            <div className='grid gap-1 content-center text-lg'>
 
                                 <h5 className="bg-white rounded-xl px-3 font-bold text-primary">Temperatura máxima: {(weather.main.temp_max - 273.15).toFixed(1)}ºC</h5>
                                 <h5 className="bg-white rounded-xl px-3 font-bold text-primary">Temperatura mínima: {(weather.main.temp_min - 273.15).toFixed(1)}ºC</h5>
@@ -91,21 +91,27 @@ export const Card = ({
                             <div className=" text-center grid justify-center pt-4 border-r-2 border-primary">
                                 <p className="text-5xl text-primary font-bold border-b-2 border-primary pb-4">{(forecast.list[1].main.temp - 273.15).toFixed(1)}ºC</p>            
                                 <p className=''>{forecastDate3}h</p>
-                                <img src={iconUrl3} alt="icon" className='h-40 m-auto'/>
+                                <div className='h-28 overflow-hidden flex justify-center items-center'>
+                                    <img src={iconUrl3} alt="icon" className='h-40' /> 
+                                </div>
                                 <p className='bg-primary text-white rounded-xl m-auto py-2 px-5'>{forecast.list[1].weather[0].description}</p>                                 
                             </div>
 
                             <div className="text-center grid justify-center pt-4 border-r-2 border-primary">
                                 <p className="text-5xl text-primary font-bold border-b-2 border-primary pb-4">{(forecast.list[2].main.temp - 273.15).toFixed(1)}ºC</p>
                                 <p className=''>{forecastDate6}h</p>
-                                <img src={iconUrl6} alt="icon" className='h-40 m-auto'/>
+                                <div className='h-28 overflow-hidden flex justify-center items-center'>
+                                    <img src={iconUrl6} alt="icon" className='h-40' /> 
+                                </div>
                                 <p className="bg-primary text-white rounded-xl m-auto py-2 px-5">{forecast.list[2].weather[0].description}</p>
                             </div>
 
                             <div className="text-center grid justify-center pt-4">
                                 <p className="text-5xl text-primary font-bold border-b-2 border-primary pb-4">{(forecast.list[3].main.temp - 273.15).toFixed(1)}ºC</p>
                                 <p className=''>{forecastDate9}h</p>
-                                <img src={iconUrl9} alt="icon" className='h-40 m-auto'/>
+                                <div className='h-28 overflow-hidden flex justify-center items-center'>
+                                    <img src={iconUrl9} alt="icon" className='h-40' /> 
+                                </div>
                                 <p className="bg-primary text-white rounded-xl m-auto py-2 px-5">
                                     {forecast.list[3].weather[0].description}
                                 </p>

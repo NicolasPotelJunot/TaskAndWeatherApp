@@ -9,8 +9,6 @@ function AppRoutes() {
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<TaskView />}/>
-        <Route path='/create-task' element={<TaskForm />}/>
-        <Route path='/edit-task/:id' element={<TaskForm />}/>
       </Routes>
     </BrowserRouter>
   )

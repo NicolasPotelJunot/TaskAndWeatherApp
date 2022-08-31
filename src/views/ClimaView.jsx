@@ -59,8 +59,8 @@ export const ClimaView = () => {
 
   return (
     <div className='flex flex-col'>
-        <div className='bg-base-200 grid gap-5 p-5 text-center rounded-xl mb-5'>
-            <h2 className='text-4xl font-bold '>Busca el clima de tu ciudad</h2>
+        <div className='bg-base-200 grid gap-5 p-5 text-center rounded-xl mb-1'>
+            <h2 className='text-2xl font-bold '>Busca el clima de tu ciudad</h2>
             <ClimaForm newLocation = {getLocation} />
         </div>
         <Card
