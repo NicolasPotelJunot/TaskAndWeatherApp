@@ -9,7 +9,7 @@ export const Header = () => {
 
   return (
 
-    <header className="flex px-2 py-2 bg-base-200 rounded-xl justify-between">
+    <header className="flex px-6 py-6 bg-base-200 rounded-xl justify-between">
 
         <h1 className="text-lg font-bold flex items-center bg-white px-4 rounded-xl ">
           

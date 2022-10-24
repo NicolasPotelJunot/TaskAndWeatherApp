@@ -14,8 +14,8 @@ export const TaskList = () => {
 
     const dispatch = useDispatch()
   
-    const handleDelete =(id)=>{
-      dispatch(deleteTask(id))  
+    const handleDelete =(task)=>{
+      dispatch(deleteTask(task.id))
     }
 
     const handleEdit = (task) =>{
