@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import { useDispatch, useSelector} from "react-redux";
-import { changeCity } from "../stateManagement/slicers/weatherSlice";
+import { changeCity } from "../../../stateManagement/slicers/weatherSlice";
 
 export const ClimaForm = ({newLocation = ""}) => {
 

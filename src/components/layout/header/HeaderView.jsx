@@ -3,7 +3,7 @@ import { LinkNav } from "./LinkNav";
 
 export const HeaderView = () => {
   return (
-    <header className="z-10 flex flex-col justify-between items-center h-screen pt-14 bg-white border-r-2">
+    <header className="z-10 flex flex-col justify-between items-center h-screen pt-14 border-r-2 bg-white">
       <div className="w-full">
         <div className="px-5">
           <img

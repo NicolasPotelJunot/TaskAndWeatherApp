@@ -1,5 +1,5 @@
-import { Spinners } from '../../Spinners'
 import {useSelector} from "react-redux";
+import { Spinners } from "./spinner/Spinners";
 
 export const Card = ({
     showData,

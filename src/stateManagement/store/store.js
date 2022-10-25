@@ -1,7 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit'
 import taskSlice from "../slicers/taskSlice";
 import weatherSlice from "../slicers/weatherSlice";
-import themeSlice from "../slicers/themeSlice";
 import formSlice from "../slicers/formSlice";
 import captureId from "../slicers/idSlice";
 
@@ -32,12 +31,6 @@ const persistConfig2 = {
   storage,
 }
 
-const persistConfig3 = {
-  key: 'theme',
-  version: 1,
-  storage,
-}
-
 const persistConfig4 = {
   key: 'form',
   version: 1,
@@ -52,12 +45,11 @@ const persistConfig5 = {
 
 const persistedReducer = persistReducer(persistConfig, taskSlice)
 const persistedReducer2 = persistReducer(persistConfig2, weatherSlice)
-const persistedReducer3 = persistReducer(persistConfig3, themeSlice)
 const persistedReducer4 = persistReducer(persistConfig4, formSlice)
 const persistedReducer5 = persistReducer(persistConfig5, captureId)
 
 export const store = configureStore({
-  reducer: {tasks:persistedReducer, city:persistedReducer2, theme:persistedReducer3, form:persistedReducer4, id:persistedReducer5},
+  reducer: {tasks:persistedReducer, city:persistedReducer2, form:persistedReducer4, id:persistedReducer5},
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: {

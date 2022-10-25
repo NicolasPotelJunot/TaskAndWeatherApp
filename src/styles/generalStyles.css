@@ -1,0 +1,15 @@
+:root {
+  --gradient: linear-gradient(
+    133deg,
+    rgba(83, 223, 255, 1) 0%,
+    rgba(255, 97, 192, 1) 68%,
+    rgba(178, 133, 255, 1) 100%
+  );
+  --green: rgb(145, 228, 145);
+  --green-dark: rgb(126, 199, 126);
+}
+
+.bg-gradient {
+  background: rgb(46, 195, 227);
+  background: var(--gradient);
+}

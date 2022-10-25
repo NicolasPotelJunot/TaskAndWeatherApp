@@ -1,4 +1,3 @@
-import React from 'react'
 import "./spinnersStyles.css";
 
 export const Spinners = () => {
