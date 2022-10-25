@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from "react-redux";
-import { editTask } from "../stateManagement/slicers/taskSlice";
+import { editTask } from "../../../stateManagement/slicers/taskSlice";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCircleArrowLeft } from '@fortawesome/free-solid-svg-icons'
 import "../components/TaskList.css";

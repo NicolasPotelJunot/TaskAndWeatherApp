@@ -1,5 +1,4 @@
-import React from 'react'
-import './index.css'
+import './styles/index.css'
 import 'animate.css';
 import AppRoutes from './routes/appRoutes.jsx'
 // redux
@@ -11,7 +10,7 @@ import { persistStore } from 'redux-persist'
 
 let persistor = persistStore(store)
 
-function App() {
+function ProviderApp() {
 
   return (
     <Provider store={store}>
@@ -22,4 +21,4 @@ function App() {
   )
 }
 
-export default App
+export default ProviderApp

@@ -1,15 +1,11 @@
-import React from 'react'
-import { TaskForm } from '../views/TaskForm'
-import { TaskView } from '../views/TaskView'
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
+import { DashRoutes } from "./DashRoutes";
 
 function AppRoutes() {
 
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path='/' element={<TaskView />}/>
-      </Routes>
+        <DashRoutes />
     </BrowserRouter>
   )
 }

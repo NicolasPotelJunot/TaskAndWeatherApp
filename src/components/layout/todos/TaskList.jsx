@@ -1,12 +1,10 @@
 import { useSelector, useDispatch } from "react-redux";
-import { deleteTask } from "../stateManagement/slicers/taskSlice";
-import { captureId } from "../stateManagement/slicers/idSlice";
+import { deleteTask } from "../../../stateManagement/slicers/taskSlice";
+import { captureId } from "../../../stateManagement/slicers/idSlice";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus, faTrashCan, faPen } from '@fortawesome/free-solid-svg-icons'
-import {Header} from '../components/Header'
-import { openFormModal } from "../stateManagement/slicers/formSlice";
-
-import "./TaskList.css";
+import {Header} from './Header'
+import { openFormModal } from "../../../stateManagement/slicers/formSlice";
 
 export const TaskList = () => {
 

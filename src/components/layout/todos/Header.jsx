@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { openFormModal } from "../stateManagement/slicers/formSlice";
+import { openFormModal } from "../../../stateManagement/slicers/formSlice";
 
 export const Header = () => {
 
