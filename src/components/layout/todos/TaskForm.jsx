@@ -71,7 +71,7 @@ export const TaskForm = () => {
             className="absolute background-modal-task w-full h-screen z-20"
           ></button>
           <div className="z-20 flex justify-center justify-items-center items-center">
-            <div className="background-form p-6 rounded-xl animate__animated animate__headShake">
+            <div className="bg-white shadow-2xl shadow-gray-700 p-6 rounded-xl animate__animated animate__headShake">
               <button
                 className="btn bg-blue-400 hover:bg-blue-500 border-none text-white px-2 rounded-full text-3xl"
                 onClick={() => dispatch(openFormModal(false))}
@@ -81,7 +81,7 @@ export const TaskForm = () => {
 
               <form className="w-96 flex flex-col my-2" onSubmit={handleSubmit}>
                 <input
-                  className="input required  w-full my-3"
+                  className="input bg-gray-200 required w-full my-3"
                   name="title"
                   type="text"
                   placeholder="Tarea"
@@ -90,7 +90,7 @@ export const TaskForm = () => {
                 />
                 <textarea
                   required
-                  className="textarea my-3"
+                  className="textarea bg-gray-200 my-3"
                   cols="30"
                   rows="8"
                   name="description"
