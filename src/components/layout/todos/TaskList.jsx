@@ -4,9 +4,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus, faTrashCan, faPen } from "@fortawesome/free-solid-svg-icons";
 
 import { HeaderTask } from "./HeaderTask";
+
 import { deleteTask } from "../../../stateManagement/slicers/taskSlice";
 import { captureId } from "../../../stateManagement/slicers/idSlice";
 import { openFormModal } from "../../../stateManagement/slicers/formSlice";
+
 import "./TaskList.css";
 
 export const TaskList = () => {
@@ -24,7 +26,7 @@ export const TaskList = () => {
   };
 
   return (
-    <section className="h-full bg-white">
+    <section className="h-full bg-white rounded-xl">
       <HeaderTask />
 
       <div className=" flex flex-col justify-between mt-6 pl-5 rounded-xl">
@@ -37,7 +39,7 @@ export const TaskList = () => {
             ) : (
               taskState.map((task) => (
                 <div
-                  className="grid grid-cols-3  gap-5 justify-between border-b-2 border-slate-300 px-3 py-5"
+                  className="grid grid-cols-3 gap-5 justify-between border-b-2 border-slate-300 px-3 py-5"
                   key={task.id}
                 >
                   <div className="animate__animated animate__lightSpeedInLeft col-span-2 grid items-center">

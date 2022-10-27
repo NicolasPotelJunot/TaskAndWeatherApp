@@ -8,6 +8,8 @@ import { addTask, editTask } from "../../../stateManagement/slicers/taskSlice";
 import { captureId } from "../../../stateManagement/slicers/idSlice";
 import { openFormModal } from "../../../stateManagement/slicers/formSlice";
 
+import "./TaskList.css"
+import "../../../styles/generalStyles.css"
 
 export const TaskForm = () => {
   const nombre = useSelector((state) => state.id.id);
@@ -63,12 +65,15 @@ export const TaskForm = () => {
   return (
     <>
       {form ? (
-        <div>
-          <div className="absolute background-modal-task w-full h-screen z-10"></div>
-          <div className="z-20 absolute w-full h-screen flex justify-center justify-items-center items-center">
-            <div className="bg-slate-800 p-6 rounded-xl animate__animated animate__headShake">
+        <div className="z-20 absolute w-full h-screen flex justify-center justify-items-center items-center">
+          <button
+            onClick={() => dispatch(openFormModal(false))}
+            className="absolute background-modal-task w-full h-screen z-20"
+          ></button>
+          <div className="z-20 flex justify-center justify-items-center items-center">
+            <div className="background-form p-6 rounded-xl animate__animated animate__headShake">
               <button
-                className=" btn btn-primary px-2 rounded-full text-3xl"
+                className="btn bg-blue-400 hover:bg-blue-500 border-none text-white px-2 rounded-full text-3xl"
                 onClick={() => dispatch(openFormModal(false))}
               >
                 <FontAwesomeIcon icon={faCircleArrowLeft} />
@@ -76,7 +81,7 @@ export const TaskForm = () => {
 
               <form className="w-96 flex flex-col my-2" onSubmit={handleSubmit}>
                 <input
-                  className="input required input-bordered input-primary w-full my-3"
+                  className="input required  w-full my-3"
                   name="title"
                   type="text"
                   placeholder="Tarea"
@@ -85,7 +90,7 @@ export const TaskForm = () => {
                 />
                 <textarea
                   required
-                  className="textarea textarea-primary my-3"
+                  className="textarea my-3"
                   cols="30"
                   rows="8"
                   name="description"
@@ -94,7 +99,7 @@ export const TaskForm = () => {
                   value={task.description}
                 ></textarea>
                 <button
-                  className="btn btn-primary my-3"
+                  className="btn bg-blue-400 hover:bg-blue-500 border-none text-white my-3"
                   onSubmit={handleSubmit}
                 >
                   Guardar

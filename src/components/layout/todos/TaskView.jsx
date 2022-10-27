@@ -1,11 +1,9 @@
-import { TaskForm } from "./TaskForm";
 import { TaskList } from "./TaskList";
 
 export const TaskView = () => {
   return (
-    <div className="h-screen flex flex-col justify-between">
-      <main>
-        <TaskForm />
+    <div className="flex flex-col justify-center items-center w-full">
+      <main className="w-1/3">
         <TaskList />
       </main>
     </div>
