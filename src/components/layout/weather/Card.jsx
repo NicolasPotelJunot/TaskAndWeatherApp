@@ -91,7 +91,7 @@ export const Card = ({
                             <div className=" text-center grid justify-center pt-4 border-r-2 border-primary">
                                 <p className="text-3xl text-primary font-bold border-primary pb-1">{(forecast.list[1].main.temp - 273.15).toFixed(1)}ºC</p>            
                                 <p className='text-primary'>{forecastDate3}h</p>
-                                <div className='h-20 overflow-hidden flex justify-center items-center'>
+                                <div className='h-28 overflow-hidden flex justify-center items-center'>
                                     <img src={iconUrl3} alt="icon" className='h-28' /> 
                                 </div>
                                 <p className='bg-primary text-white rounded-xl m-auto py-2 px-5'>{forecast.list[1].weather[0].description}</p>                                 
@@ -100,7 +100,7 @@ export const Card = ({
                             <div className="text-center grid justify-center pt-4 border-r-2 border-primary">
                                 <p className="text-3xl text-primary font-bold border-primary pb-1">{(forecast.list[2].main.temp - 273.15).toFixed(1)}ºC</p>
                                 <p className='text-primary'>{forecastDate6}h</p>
-                                <div className='h-20 overflow-hidden flex justify-center items-center'>
+                                <div className='h-28 overflow-hidden flex justify-center items-center'>
                                     <img src={iconUrl6} alt="icon" className='h-28' /> 
                                 </div>
                                 <p className="bg-primary text-white rounded-xl m-auto py-2 px-5">{forecast.list[2].weather[0].description}</p>
@@ -109,7 +109,7 @@ export const Card = ({
                             <div className="text-center grid justify-center pt-4">
                                 <p className="text-3xl text-primary font-bold border-primary pb-1">{(forecast.list[3].main.temp - 273.15).toFixed(1)}ºC</p>
                                 <p className='text-primary'>{forecastDate9}h</p>
-                                <div className='h-20 overflow-hidden flex justify-center items-center'>
+                                <div className='h-28 overflow-hidden flex justify-center items-center'>
                                     <img src={iconUrl9} alt="icon" className='h-28' /> 
                                 </div>
                                 <p className="bg-primary text-white rounded-xl m-auto py-2 px-5">

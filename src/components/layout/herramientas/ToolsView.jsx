@@ -1,6 +1,9 @@
+import { Calculator } from "./calculator/Calculator"
 
 export const ToolsView = () => {
   return (
-    <div>ToolsView</div>
+    <div>
+      <Calculator />
+    </div>
   )
 }

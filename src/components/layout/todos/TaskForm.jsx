@@ -8,8 +8,8 @@ import { addTask, editTask } from "../../../stateManagement/slicers/taskSlice";
 import { captureId } from "../../../stateManagement/slicers/idSlice";
 import { openFormModal } from "../../../stateManagement/slicers/formSlice";
 
-import "./TaskList.css"
-import "../../../styles/generalStyles.css"
+import "./TaskList.css";
+import "../../../styles/generalStyles.css";
 
 export const TaskForm = () => {
   const nombre = useSelector((state) => state.id.id);
@@ -71,7 +71,7 @@ export const TaskForm = () => {
             className="absolute background-modal-task w-full h-screen z-20"
           ></button>
           <div className="z-20 flex justify-center justify-items-center items-center">
-            <div className="bg-white shadow-2xl shadow-gray-700 p-6 rounded-xl animate__animated animate__headShake">
+            <div className="bg-white shadow-2xl shadow-gray-600 p-6 rounded-xl animate__animated animate__headShake">
               <button
                 className="btn bg-blue-400 hover:bg-blue-500 border-none text-white px-2 rounded-full text-3xl"
                 onClick={() => dispatch(openFormModal(false))}
