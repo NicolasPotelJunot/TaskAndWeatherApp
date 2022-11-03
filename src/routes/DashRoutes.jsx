@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import { HeaderView } from "../components/layout/header/HeaderView";
-import { ToolsView } from "../components/layout/herramientas/ToolsView";
+import { ToolsView } from "../components/layout/tools/ToolsView";
 import { TaskForm } from "../components/layout/todos/TaskForm";
 import { TaskView } from "../components/layout/todos/TaskView";
 import { ClimaView } from "../components/layout/weather/ClimaView";
