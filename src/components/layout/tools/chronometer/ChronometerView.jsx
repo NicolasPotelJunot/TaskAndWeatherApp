@@ -19,26 +19,38 @@ export const ChronometerView = () => {
   }, [timerOn]);
 
   return (
-    <div className="bg-black">
-      <div>
-        <span>{("0" + Math.floor((time / 60000) % 60)).slice(-2)}:</span>
-        <span>{("0" + Math.floor((time / 1000) % 60)).slice(-2)}:</span>
-        <span>{("0" + ((time / 10) % 100)).slice(-2)}</span>
+    <div className="bg-white w-full rounded-xl mb-4 h-32 flex">
+      <div className="w-3/4 flex justify-center pb-3 items-center">
+        <div className="text-7xl font-semibold">
+          <span>{("0" + Math.floor((time / 60000) % 60)).slice(-2)}:</span>
+          <span>{("0" + Math.floor((time / 1000) % 60)).slice(-2)}:</span>
+          <span className="text-5xl">
+            {("0" + ((time / 10) % 100)).slice(-2)}
+          </span>
+        </div>
       </div>
-      <div>
+      <div className="flex flex-col justify-center items-center">
         {!timerOn && time === 0 && (
-          <button onClick={() => setTimeOn(true)}>start</button>
+          <button className="w-24 py-2 m-1 bg-blue-400 text-white rounded-xl" onClick={() => setTimeOn(true)}>
+            start
+          </button>
         )}
 
-        {timerOn && <button onClick={() => setTimeOn(false)}>stop</button>}
+        {timerOn && (
+          <button className="w-24 py-2 m-1 bg-blue-400 text-white rounded-xl" onClick={() => setTimeOn(false)}>
+            stop
+          </button>
+        )}
 
         {!timerOn && time !== 0 && (
-          <button onClick={() => setTimeOn(true)}>Resume</button>
+          <button className="w-24 py-2 m-1 bg-blue-400 text-white rounded-xl" onClick={() => setTimeOn(true)}>
+            Resume
+          </button>
         )}
 
-        {!timerOn && time > 0 && (
-          <button onClick={() => setTime(0)}>Reset</button>
-        )}
+        <button className="w-24 py-2 m-1 bg-blue-400 text-white rounded-xl" onClick={() => setTime(0)}>
+          Reset
+        </button>
       </div>
     </div>
   );

@@ -15,10 +15,10 @@ export const CalendarView = () => {
   const [value, setValue] = useState(Dayjs);
 
   return (
-    <div className="w-1/3 h-1/2">
+    <div className="w-full rounded-xl py-2 bg-white">
       <LocalizationProvider dateAdapter={AdapterDayjs}>
         <StaticDatePicker
-        displayStaticWrapperAs="desktop"
+          displayStaticWrapperAs="desktop"
           orientation="landscape"
           openTo="day"
           value={value}

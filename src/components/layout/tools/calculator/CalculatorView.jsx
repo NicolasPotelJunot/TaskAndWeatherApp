@@ -21,24 +21,6 @@ export const CalculatorView = () => {
     }
   };
 
-  const createDigits = () => {
-    const digits = [];
-
-    for (let i = 1; i < 10; i++) {
-      digits.push(
-        <button
-          onClick={() => updateCalc(i.toString())}
-          className="btn btn-primary"
-          key={i}
-        >
-          {i}
-        </button>
-      );
-    }
-
-    return digits;
-  };
-
   const calculate = () => {
     setCalc(eval(calc).toString());
   };
@@ -52,43 +34,87 @@ export const CalculatorView = () => {
   };
 
   return (
-    <div className="bg-white p-10">
-      <div>
-        <div>
+    <div className="flex justify-end items-center">
+      <div className="bg-white rounded-xl px-10 py-14 w-2/3 mx-10">
+        <div className="text-end text-5xl text-gray-600">
           {result ? <span>({result})</span> : ""}
           {calc || "0"}
         </div>
 
-        <div>
-          <button onClick={() => updateCalc("/")} className="btn btn-primary">
-            /
-          </button>
+        <div className="grid grid-cols-4 gap-2 mt-10">
+          <button onClick={()=>{setCalc(""); setResult("")}} className="btn btn-primary">C</button>
+
           <button onClick={() => updateCalc("*")} className="btn btn-primary">
             *
           </button>
-          <button onClick={() => updateCalc("+")} className="btn btn-primary">
-            +
+
+          <button onClick={() => updateCalc("/")} className="btn btn-primary">
+            /
           </button>
+
           <button onClick={() => updateCalc("-")} className="btn btn-primary">
             -
           </button>
 
-          <button onClick={deleteLast} className="btn btn-primary">DEL</button>
-        </div>
+          <button onClick={() => updateCalc("7")} className="btn btn-primary">
+            7
+          </button>
 
-        <div>
-          {createDigits()}
+          <button onClick={() => updateCalc("8")} className="btn btn-primary">
+            8
+          </button>
+
+          <button onClick={() => updateCalc("9")} className="btn btn-primary">
+            9
+          </button>
+
+          <button onClick={() => updateCalc("+")} className="btn btn-primary">
+            +
+          </button>
+
+          <button onClick={() => updateCalc("4")} className="btn btn-primary">
+            4
+          </button>
+
+          <button onClick={() => updateCalc("5")} className="btn btn-primary">
+            5
+          </button>
+
+          <button onClick={() => updateCalc("6")} className="btn btn-primary">
+            6
+          </button>
+
+          <button
+            onClick={calculate}
+            className="bg-blue-400 text-3xl text-white font-bold row-span-3 rounded-lg"
+          >
+            =
+          </button>
+
+          <button onClick={() => updateCalc("1")} className="btn btn-primary">
+            1
+          </button>
+
+          <button onClick={() => updateCalc("2")} className="btn btn-primary">
+            2
+          </button>
+
+          <button onClick={() => updateCalc("3")} className="btn btn-primary">
+            3
+          </button>
+
+          <button onClick={deleteLast} className="btn btn-primary">
+            DEL
+          </button>
+
           <button onClick={() => updateCalc("0")} className="btn btn-primary">
             0
           </button>
           <button onClick={() => updateCalc(".")} className="btn btn-primary">
             .
           </button>
-
-          <button onClick={calculate} className="btn btn-primary">
-            =
-          </button>
         </div>
+
       </div>
     </div>
   );
