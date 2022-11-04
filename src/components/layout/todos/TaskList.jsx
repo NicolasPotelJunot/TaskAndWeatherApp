@@ -34,7 +34,7 @@ export const TaskList = () => {
           <div className="task-width h-full">
             {taskState.length === 0 ? (
               <p className="h-full w-full font-bold text-xl m-auto flex justify-center items-center">
-                Agrega tareas y cumple tus metas
+                ¡Agrega tareas y cumple tus metas!
               </p>
             ) : (
               taskState.map((task) => (

@@ -13,9 +13,7 @@ export const LinkNav = ({ text }) => {
         <div className="mr-2 w-5 flex ">
           {text === "tareas" && <FontAwesomeIcon icon={faList} />}
           {text === "clima" && <FontAwesomeIcon icon={faCloudSun} />}
-          {text === "herramientas" && (
-            <FontAwesomeIcon icon={faScrewdriverWrench} />
-          )}
+          {text === "herramientas" && (<FontAwesomeIcon icon={faScrewdriverWrench} />)}
         </div>
 
         <p className="text-sm">{text}</p>

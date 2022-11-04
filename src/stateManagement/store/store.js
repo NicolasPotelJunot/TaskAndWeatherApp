@@ -1,9 +1,9 @@
-import { configureStore } from '@reduxjs/toolkit'
+import { configureStore } from "@reduxjs/toolkit";
 import taskSlice from "../slicers/taskSlice";
 import weatherSlice from "../slicers/weatherSlice";
 import formSlice from "../slicers/formSlice";
 import captureId from "../slicers/idSlice";
-
+import menuSlice from "../slicers/menuSlice";
 
 // persist
 import {
@@ -14,46 +14,58 @@ import {
   PERSIST,
   PURGE,
   REGISTER,
-} from 'redux-persist'
+} from "redux-persist";
 
-import storage from 'redux-persist/lib/storage'
-
+import storage from "redux-persist/lib/storage";
 
 const persistConfig = {
-  key: 'tasks',
+  key: "tasks",
   version: 1,
   storage,
-}
+};
 
 const persistConfig2 = {
-  key: 'name',
+  key: "name",
   version: 1,
   storage,
-}
+};
 
 const persistConfig4 = {
-  key: 'form',
+  key: "form",
   version: 1,
   storage,
-}
+};
 
 const persistConfig5 = {
-  key: 'id',
+  key: "id",
   version: 1,
   storage,
-}
+};
 
-const persistedReducer = persistReducer(persistConfig, taskSlice)
-const persistedReducer2 = persistReducer(persistConfig2, weatherSlice)
-const persistedReducer4 = persistReducer(persistConfig4, formSlice)
-const persistedReducer5 = persistReducer(persistConfig5, captureId)
+const persistConfig6 = {
+  key: "activation",
+  version: 1,
+  storage,
+};
+
+const persistedReducer = persistReducer(persistConfig, taskSlice);
+const persistedReducer2 = persistReducer(persistConfig2, weatherSlice);
+const persistedReducer4 = persistReducer(persistConfig4, formSlice);
+const persistedReducer5 = persistReducer(persistConfig5, captureId);
+const persistedReducer6 = persistReducer(persistConfig6, menuSlice);
 
 export const store = configureStore({
-  reducer: {tasks:persistedReducer, city:persistedReducer2, form:persistedReducer4, id:persistedReducer5},
+  reducer: {
+    tasks: persistedReducer,
+    city: persistedReducer2,
+    form: persistedReducer4,
+    id: persistedReducer5,
+    menu: persistedReducer6,
+  },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: {
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
     }),
-})
+});

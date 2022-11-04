@@ -1,0 +1,15 @@
+.activeMenu {
+  transform: translateX(0px);
+  transition: all 0.35s linear;
+}
+
+.inactiveMenu {
+  transform: translateX(-170px);
+  transition: all 0.35s linear;
+}
+
+@media (min-width: 640px) {
+  .inactiveMenu {
+    transform: translateX(0px);
+  }
+}
