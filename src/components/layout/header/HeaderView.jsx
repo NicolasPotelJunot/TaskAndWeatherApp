@@ -8,7 +8,6 @@ import { LinkNav } from "./LinkNav";
 import "./headerView.css";
 
 export const HeaderView = () => {
-
   const selector = useSelector((state) => state.menu.activation);
   const dispatch = useDispatch();
 
@@ -23,13 +22,15 @@ export const HeaderView = () => {
   }, [selector]);
 
   const handleMenu = () => {
-    dispatch(activationMenu(true));
+    dispatch(activationMenu(false));
   };
 
   return (
     <header className="z-10">
       <ButtonMenu />
-      <div className={`flex flex-col justify-between items-center pt-20 md:pt-10 border-r-2 w-40 fixed h-screen bg-white ${isActive}`}>
+      <div
+        className={`flex flex-col justify-between items-center pt-20 md:pt-10 border-r-2 w-40 fixed h-screen bg-white ${isActive}`}
+      >
         <div className="w-full">
           <div className="px-5">
             <img
@@ -40,9 +41,15 @@ export const HeaderView = () => {
             <DateToday />
           </div>
           <div className="grid mt-10">
-            <LinkNav text={"tareas"} />
-            <LinkNav text={"clima"} />
-            <LinkNav text={"herramientas"} />
+            <button onClick={handleMenu}>
+              <LinkNav text={"tareas"} />
+            </button>
+            <button onClick={handleMenu}>
+              <LinkNav text={"clima"} />
+            </button>
+            <button onClick={handleMenu}>
+              <LinkNav text={"herramientas"} />
+            </button>
           </div>
         </div>
       </div>
