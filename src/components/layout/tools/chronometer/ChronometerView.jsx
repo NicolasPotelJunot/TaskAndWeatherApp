@@ -1,4 +1,11 @@
 import { useEffect, useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faPlay,
+  faArrowRotateLeft,
+  faPause,
+} from "@fortawesome/free-solid-svg-icons";
+import "../../../../styles/generalStyles.css";
 
 export const ChronometerView = () => {
   const [time, setTime] = useState(0);
@@ -19,9 +26,9 @@ export const ChronometerView = () => {
   }, [timerOn]);
 
   return (
-    <div className="bg-white w-full rounded-xl mb-4 h-32 flex">
+    <div className="bg-white w-full rounded-xl mb-4 h-32 flex animate__animated animate__fadeIn">
       <div className="w-3/4 flex justify-center pb-3 items-center">
-        <div className="text-7xl font-semibold">
+        <div className="text-7xl font-semibold text-primary">
           <span>{("0" + Math.floor((time / 60000) % 60)).slice(-2)}:</span>
           <span>{("0" + Math.floor((time / 1000) % 60)).slice(-2)}:</span>
           <span className="text-5xl">
@@ -31,25 +38,37 @@ export const ChronometerView = () => {
       </div>
       <div className="flex flex-col justify-center items-center">
         {!timerOn && time === 0 && (
-          <button className="w-24 py-2 m-1 bg-blue-400 text-white rounded-xl" onClick={() => setTimeOn(true)}>
-            start
+          <button
+            className="btn border-none w-20 m-1 bg-btn-green text-white rounded-xl"
+            onClick={() => setTimeOn(true)}
+          >
+            <FontAwesomeIcon icon={faPlay} />
           </button>
         )}
 
         {timerOn && (
-          <button className="w-24 py-2 m-1 bg-blue-400 text-white rounded-xl" onClick={() => setTimeOn(false)}>
-            stop
+          <button
+            className="btn border-none w-20 m-1 bg-btn-red text-white rounded-xl"
+            onClick={() => setTimeOn(false)}
+          >
+            <FontAwesomeIcon icon={faPause} />
           </button>
         )}
 
         {!timerOn && time !== 0 && (
-          <button className="w-24 py-2 m-1 bg-blue-400 text-white rounded-xl" onClick={() => setTimeOn(true)}>
-            Resume
+          <button
+            className="btn border-none w-20 m-1 bg-btn-green text-white rounded-xl"
+            onClick={() => setTimeOn(true)}
+          >
+            <FontAwesomeIcon icon={faPlay} />
           </button>
         )}
 
-        <button className="w-24 py-2 m-1 bg-blue-400 text-white rounded-xl" onClick={() => setTime(0)}>
-          Reset
+        <button
+          className="btn border-none w-20 m-1 bg-primary text-white rounded-xl"
+          onClick={() => setTime(0)}
+        >
+          <FontAwesomeIcon icon={faArrowRotateLeft} />
         </button>
       </div>
     </div>

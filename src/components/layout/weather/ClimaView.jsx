@@ -59,10 +59,10 @@ export const ClimaView = () => {
   };
 
   return (
-    <div className="h-screen w-screen flex justify-center items-center">
-      <div className="flex flex-col bg-white w-1/3 rounded-lg">
+    <div className="h-screen w-screen flex justify-center items-center animate__animated animate__fadeIn">
+      <div className="flex flex-col bg-white w-1/3 rounded-lg p-5">
         <div className="grid gap-5 p-5 text-center rounded-xl mb-1">
-          <h2 className="text-2xl font-bold ">Busca el clima de tu ciudad</h2>
+          <h2 className="text-2xl font-bold text-dark">Busca el clima de tu ciudad</h2>
           <ClimaForm newLocation={getLocation} />
         </div>
         <Card

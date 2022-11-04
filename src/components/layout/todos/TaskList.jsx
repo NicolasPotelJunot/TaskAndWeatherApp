@@ -56,7 +56,7 @@ export const TaskList = () => {
 
                     <button
                       onClick={() => handleDelete(task)}
-                      className="btn bg-red-300 hover:bg-red-400 border-none text-white rounded-full mx-1"
+                      className="btn bg-btn-red border-none text-white rounded-full mx-1"
                     >
                       <FontAwesomeIcon icon={faTrashCan} />
                     </button>
@@ -71,7 +71,7 @@ export const TaskList = () => {
           <div className="card-body">
             <button
               onClick={() => dispatch(openFormModal(true))}
-              className="btn bg-blue-400 hover:bg-blue-500 text-white text-4xl ease-in duration-400 m-auto rounded-full text-center h-32 w-32 border-none p-4"
+              className="btn bg-primary text-white text-4xl ease-in duration-400 m-auto rounded-full text-center h-32 w-32 border-none p-4"
             >
               <FontAwesomeIcon icon={faPlus} />
             </button>

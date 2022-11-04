@@ -15,7 +15,7 @@ export const CalendarView = () => {
   const [value, setValue] = useState(Dayjs);
 
   return (
-    <div className="w-full rounded-xl py-2 bg-white">
+    <div className="w-full animate__animated animate__fadeIn rounded-xl py-2 bg-white">
       <LocalizationProvider dateAdapter={AdapterDayjs}>
         <StaticDatePicker
           displayStaticWrapperAs="desktop"

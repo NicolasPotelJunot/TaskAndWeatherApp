@@ -49,74 +49,66 @@ export const Card = ({
         )
 
   return (
-    <div className='animate__animated animate__zoomInDown'>
+    <div className='animate__animated animate__zoomInDown px-5'>
         {
             showData === true ? (
                 <div className='w-full grid gap-1'>
-                    {/* <h3 className=''>{forecast.city.name}</h3> */}
+                    <div className='grid grid-cols-2 py-2 rounded-2xl'>
 
-                    <div className='grid grid-cols-2 py-2 px-10 rounded-2xl'>
-
-                        <div className='grid justify-center items-center pb-5'>
-                            <h3 className='text-2xl pb-2 text-center font-bold'>Clima Actual</h3>
+                        <div className='grid items-start pb-5'>
+                            <h3 className='text-lg pb-2 text-center font-bold text-dark'>Clima Actual</h3>
                             <h3 className='text-4xl text-center text-primary font-bold'>{(weather.main.temp- 273.15).toFixed(1)}ºC</h3> 
                             <div className='grid justify-center'>
                                 <div className='h-20 overflow-hidden flex justify-center items-center'>
                                     <img src={iconUrl} alt="icon" className='h-36' /> 
                                 </div>
-                                <p className='bg-primary text-white rounded-xl mx-auto py-1 px-5'>{weather.weather[0].description}</p>
+                                <p className='bg-btn-violet-noHover text-white rounded-xl m-auto py-1 px-4'>{weather.weather[0].description}</p>
                             </div>
                         </div>
 
-                        <div className='grid justify-between'>
-                            <h3 className='text-primary font-bold text-4xl my-auto pb-2 border-b-4 border-primary'>{city}</h3>    
-                            <div className='grid gap-1 content-center text-lg'>
-
-                                <h5 className="bg-white rounded-xl px-3 font-bold text-primary">Temperatura máxima: {(weather.main.temp_max - 273.15).toFixed(1)}ºC</h5>
-                                <h5 className="bg-white rounded-xl px-3 font-bold text-primary">Temperatura mínima: {(weather.main.temp_min - 273.15).toFixed(1)}ºC</h5>
-                                <h5 className="bg-white rounded-xl px-3 font-bold text-primary">Sensación térmica: {(weather.main.feels_like- 273.15).toFixed(1)}ºC</h5>
-                                <h5 className="bg-white rounded-xl px-3 font-bold text-primary">Humedad: {weather.main.humidity}%</h5>
-                                <h5 className="bg-white rounded-xl px-3 font-bold text-primary">Velocidad del viento: {weather.wind.speed}m/s</h5>
-
+                        <div className='grid items-start'>
+                            <h3 className='text-dark font-bold text-3xl mb-auto pb-2 border-b-4 border-primary '>{city}</h3>    
+                            <div className='grid gap-2 content-center text-lg'>
+                                <h5 className="bg-white rounded-xl font-bold text-primary text-sm">Temperatura máxima: {(weather.main.temp_max - 273.15).toFixed(1)}ºC</h5>
+                                <h5 className="bg-white rounded-xl font-bold text-primary text-sm">Temperatura mínima: {(weather.main.temp_min - 273.15).toFixed(1)}ºC</h5>
+                                <h5 className="bg-white rounded-xl font-bold text-primary text-sm">Sensación térmica: {(weather.main.feels_like- 273.15).toFixed(1)}ºC</h5>
+                                <h5 className="bg-white rounded-xl font-bold text-primary text-sm">Humedad: {weather.main.humidity}%</h5>
+                                <h5 className="bg-white rounded-xl font-bold text-primary text-sm">Velocidad del viento: {weather.wind.speed}m/s</h5>
                             </div>
                         </div>
 
                     </div>
 
                     <div className='py-6 px-10 rounded-2xl'>
-                        <h3 className='text-3xl font-bold text-center mb-4'>Clima en las próximas horas</h3>
+                        <h3 className='text-2xl font-bold text-center mb-4 text-dark'>Clima en las próximas horas</h3>
 
                         <div className='grid grid-cols-3'>
-
-                            <div className=" text-center grid justify-center pt-4 border-r-2 border-primary">
+                            <div className=" text-center grid justify-center pt-4">
                                 <p className="text-3xl text-primary font-bold border-primary pb-1">{(forecast.list[1].main.temp - 273.15).toFixed(1)}ºC</p>            
                                 <p className='text-primary'>{forecastDate3}h</p>
-                                <div className='h-28 overflow-hidden flex justify-center items-center'>
+                                <div className='h-16 overflow-hidden flex justify-center items-center'>
                                     <img src={iconUrl3} alt="icon" className='h-28' /> 
                                 </div>
-                                <p className='bg-primary text-white rounded-xl m-auto py-2 px-5'>{forecast.list[1].weather[0].description}</p>                                 
+                                <p className='bg-btn-violet-noHover text-white rounded-xl m-auto py-1 px-4'>{forecast.list[1].weather[0].description}</p>                                 
                             </div>
-
-                            <div className="text-center grid justify-center pt-4 border-r-2 border-primary">
-                                <p className="text-3xl text-primary font-bold border-primary pb-1">{(forecast.list[2].main.temp - 273.15).toFixed(1)}ºC</p>
+                            <div className="text-center grid justify-center pt-4">
+                                <p className="text-3xl text-primary font-bold  pb-1">{(forecast.list[2].main.temp - 273.15).toFixed(1)}ºC</p>
                                 <p className='text-primary'>{forecastDate6}h</p>
-                                <div className='h-28 overflow-hidden flex justify-center items-center'>
+                                <div className='h-16 overflow-hidden flex justify-center items-center'>
                                     <img src={iconUrl6} alt="icon" className='h-28' /> 
                                 </div>
-                                <p className="bg-primary text-white rounded-xl m-auto py-2 px-5">{forecast.list[2].weather[0].description}</p>
+                                <p className="bg-btn-violet-noHover text-white rounded-xl m-auto py-1 px-4">{forecast.list[2].weather[0].description}</p>
                             </div>
-
                             <div className="text-center grid justify-center pt-4">
-                                <p className="text-3xl text-primary font-bold border-primary pb-1">{(forecast.list[3].main.temp - 273.15).toFixed(1)}ºC</p>
+                                <p className="text-3xl text-primary font-bold pb-1">{(forecast.list[3].main.temp - 273.15).toFixed(1)}ºC</p>
                                 <p className='text-primary'>{forecastDate9}h</p>
-                                <div className='h-28 overflow-hidden flex justify-center items-center'>
+                                <div className='h-16 overflow-hidden flex justify-center items-center'>
                                     <img src={iconUrl9} alt="icon" className='h-28' /> 
                                 </div>
-                                <p className="bg-primary text-white rounded-xl m-auto py-2 px-5">
+                                <p className="bg-btn-violet-noHover text-white rounded-xl m-auto py-1 px-4">
                                     {forecast.list[3].weather[0].description}
                                 </p>
                             </div>
-
                         </div>
                     </div>
 
@@ -125,7 +117,7 @@ export const Card = ({
                 
             ) : (
                 <div className='flex justify-center'>
-                    <h2 className='btn text-center text-sm cursor-default mx-auto'>Ingrese el nombre de su ciudad para ver su clima</h2>
+                    <h2 className='text-dark text-center text-lg cursor-default mx-auto'>Ingrese el nombre de su ciudad para ver su clima</h2>
                 </div>
             )
         }

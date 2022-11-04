@@ -18,7 +18,7 @@ export const HeaderTask = () => {
 
       <button
         onClick={() => dispatch(openFormModal(false))}
-        className="btn bg-blue-400 hover:bg-blue-500 border-none text-white text-xs ease-in duration-400 rounded-2xl"
+        className="btn bg-primary border-none text-white text-xs ease-in duration-400 rounded-2xl"
       >
         <p className="text-3xl flex items-center mb-2 mr-2">+</p>Crear tarea
       </button>

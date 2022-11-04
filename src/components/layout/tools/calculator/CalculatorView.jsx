@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faDeleteLeft , faX } from "@fortawesome/free-solid-svg-icons";
 
 export const CalculatorView = () => {
   const [calc, setCalc] = useState("");
@@ -34,87 +36,94 @@ export const CalculatorView = () => {
   };
 
   return (
-    <div className="flex justify-end items-center">
-      <div className="bg-white rounded-xl px-10 py-14 w-2/3 mx-10">
-        <div className="text-end text-5xl text-gray-600">
+    <div className="flex justify-end items-center animate__animated animate__fadeIn">
+      <div className="bg-white rounded-xl px-10 py-14 w-96 mx-10">
+        <div className="text-end text-5xl text-primary font-semibold">
           {result ? <span>({result})</span> : ""}
           {calc || "0"}
         </div>
 
         <div className="grid grid-cols-4 gap-2 mt-10">
-          <button onClick={()=>{setCalc(""); setResult("")}} className="btn btn-primary">C</button>
-
-          <button onClick={() => updateCalc("*")} className="btn btn-primary">
-            *
+          <button
+            onClick={() => {
+              setCalc("");
+              setResult("");
+            }}
+            className="btn bg-btn-red text-xl border-none text-white"
+          >
+            C
           </button>
 
-          <button onClick={() => updateCalc("/")} className="btn btn-primary">
+          <button onClick={() => updateCalc("*")} className="btn border-none bg-btn-gray text-white">
+            <FontAwesomeIcon icon={faX} />
+          </button>
+
+          <button onClick={() => updateCalc("/")} className="btn border-none bg-btn-gray text-white">
             /
           </button>
 
-          <button onClick={() => updateCalc("-")} className="btn btn-primary">
+          <button onClick={() => updateCalc("-")} className="btn border-none bg-btn-gray text-3xl text-white">
             -
           </button>
 
-          <button onClick={() => updateCalc("7")} className="btn btn-primary">
+          <button onClick={() => updateCalc("7")} className="btn border-none bg-primary text-white">
             7
           </button>
 
-          <button onClick={() => updateCalc("8")} className="btn btn-primary">
+          <button onClick={() => updateCalc("8")} className="btn border-none bg-primary text-white">
             8
           </button>
 
-          <button onClick={() => updateCalc("9")} className="btn btn-primary">
+          <button onClick={() => updateCalc("9")} className="btn border-none bg-primary text-white">
             9
           </button>
 
-          <button onClick={() => updateCalc("+")} className="btn btn-primary">
+          <button onClick={() => updateCalc("+")} className="btn border-none bg-btn-gray text-2xl text-white">
             +
           </button>
 
-          <button onClick={() => updateCalc("4")} className="btn btn-primary">
+          <button onClick={() => updateCalc("4")} className="btn border-none bg-primary text-white">
             4
           </button>
 
-          <button onClick={() => updateCalc("5")} className="btn btn-primary">
+          <button onClick={() => updateCalc("5")} className="btn border-none bg-primary text-white">
             5
           </button>
 
-          <button onClick={() => updateCalc("6")} className="btn btn-primary">
+          <button onClick={() => updateCalc("6")} className="btn border-none bg-primary text-white">
             6
           </button>
 
           <button
             onClick={calculate}
-            className="bg-blue-400 text-3xl text-white font-bold row-span-3 rounded-lg"
+            className="bg-btn-green text-3xl text-white font-bold row-span-3 rounded-lg"
           >
             =
           </button>
 
-          <button onClick={() => updateCalc("1")} className="btn btn-primary">
+          <button onClick={() => updateCalc("1")} className="btn border-none bg-primary text-white">
             1
           </button>
 
-          <button onClick={() => updateCalc("2")} className="btn btn-primary">
+          <button onClick={() => updateCalc("2")} className="btn border-none bg-primary text-white">
             2
           </button>
 
-          <button onClick={() => updateCalc("3")} className="btn btn-primary">
+          <button onClick={() => updateCalc("3")} className="btn border-none bg-primary text-white">
             3
           </button>
 
-          <button onClick={deleteLast} className="btn btn-primary">
-            DEL
+          <button onClick={deleteLast} className="btn border-none bg-btn-red text-white">
+           <FontAwesomeIcon icon={faDeleteLeft} />
           </button>
 
-          <button onClick={() => updateCalc("0")} className="btn btn-primary">
+          <button onClick={() => updateCalc("0")} className="btn border-none bg-primary text-white">
             0
           </button>
-          <button onClick={() => updateCalc(".")} className="btn btn-primary">
+          <button onClick={() => updateCalc(".")} className="btn border-none bg-primary text-white">
             .
           </button>
         </div>
-
       </div>
     </div>
   );

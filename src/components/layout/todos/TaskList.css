@@ -7,11 +7,3 @@
     rgba(178, 133, 255, 0.68) 100%
   );
 }
-
-.bg-btn-green {
-  background: var(--green);
-}
-
-.bg-btn-green:hover {
-  background: var(--green-dark);
-}
