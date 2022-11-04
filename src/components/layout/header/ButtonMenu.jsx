@@ -23,7 +23,7 @@ export const ButtonMenu = () => {
   };
 
   return (
-    <div className="sm:hidden absolute z-20 w-20 pl-8 pt-2 pb-5 pr-14 flex justify-center items-center bg-white rounded-br-full">
+    <div className="lg:hidden absolute z-20 w-20 pl-8 pt-2 pb-5 pr-14 flex justify-center items-center bg-white rounded-br-full">
       <button
         onClick={handleMenu}
         className={`hamburger hamburger--collapse ${active}`}

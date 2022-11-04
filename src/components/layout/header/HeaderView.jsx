@@ -29,7 +29,7 @@ export const HeaderView = () => {
     <header className="z-10">
       <ButtonMenu />
       <div
-        className={`flex flex-col justify-between items-center pt-20 md:pt-10 border-r-2 w-40 fixed h-screen bg-white ${isActive}`}
+        className={`flex flex-col justify-between items-center pt-20 lg:pt-10 border-r-2 w-40 fixed h-screen bg-white ${isActive}`}
       >
         <div className="w-full">
           <div className="px-5">

@@ -8,7 +8,7 @@ export const HeaderTask = () => {
 
   return (
     <header className="flex px-6 py-6 rounded-xl justify-between">
-      <h1 className="text-lg font-bold flex items-center bg-white px-4 rounded-xl ">
+      <h1 className="hidden text-lg font-bold md:flex items-center bg-white px-4 rounded-xl ">
         {taskState.length === 0
           ? `No tenes tareas pendientes`
           : taskState.length === 1

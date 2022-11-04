@@ -65,7 +65,7 @@ export const TaskForm = () => {
   return (
     <>
       {form ? (
-        <div className="z-20 absolute w-full h-screen flex justify-center justify-items-center items-center">
+        <div className="z-30 absolute w-full h-screen flex justify-center justify-items-center items-center">
           <button
             onClick={() => dispatch(openFormModal(false))}
             className="absolute background-modal-task w-full h-screen z-20"
@@ -79,7 +79,7 @@ export const TaskForm = () => {
                 <FontAwesomeIcon icon={faCircleArrowLeft} />
               </button>
 
-              <form className="w-96 flex flex-col my-2" onSubmit={handleSubmit}>
+              <form className="w-64 sm:w-80 md:w-96 flex flex-col my-2" onSubmit={handleSubmit}>
                 <input
                   className="input bg-gray-200 required w-full my-3"
                   name="title"
