@@ -36,9 +36,9 @@ export const CalculatorView = () => {
   };
 
   return (
-    <div className="flex justify-end items-center animate__animated animate__fadeIn">
-      <div className="bg-white rounded-xl px-10 py-14 w-96 mx-10">
-        <div className="text-end text-5xl text-primary font-semibold">
+    <section className="rounded-xl flex mb-5 lg:mb-0 justify-center lg:justify-end items-center animate__animated animate__fadeIn">
+      <div className="bg-white rounded-xl px-10 py-10 md:w-3/4 lg:w-96 md:mx-10 md:py-14">
+        <div className="text-end text-5xl text-primary font-semibold w-full overflow-hidden">
           {result ? <span>({result})</span> : ""}
           {calc || "0"}
         </div>
@@ -125,6 +125,6 @@ export const CalculatorView = () => {
           </button>
         </div>
       </div>
-    </div>
+    </section>
   );
 };

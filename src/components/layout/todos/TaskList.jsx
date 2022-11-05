@@ -30,7 +30,7 @@ export const TaskList = () => {
       <HeaderTask />
 
       <div className=" flex flex-col justify-between mt-6 md:pl-5 rounded-xl">
-        <div className="h-52 md:h-96 scroll-m-0 overflow-auto">
+        <div className="h-52 md:h-96 xl:h-60 2xl:h-96 scroll-m-0 overflow-auto">
           <div className="task-width h-full">
             {taskState.length === 0 ? (
               <p className="h-full w-full font-bold text-lg md:text-xl text-center m-auto flex justify-center items-center">

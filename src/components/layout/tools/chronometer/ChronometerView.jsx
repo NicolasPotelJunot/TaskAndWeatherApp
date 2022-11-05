@@ -26,12 +26,12 @@ export const ChronometerView = () => {
   }, [timerOn]);
 
   return (
-    <div className="bg-white w-full rounded-xl mb-4 h-32 flex animate__animated animate__fadeIn">
-      <div className="w-3/4 flex justify-center pb-3 items-center">
-        <div className="text-7xl font-semibold text-primary">
+    <div className="bg-white w-full rounded-xl px-10 mb-4 h-32 flex animate__animated animate__fadeIn">
+      <div className="w-3/4 flex justify-center pb-3 pr-3 items-center">
+        <div className="text-5xl 2xl:text-7xl font-semibold text-primary">
           <span>{("0" + Math.floor((time / 60000) % 60)).slice(-2)}:</span>
           <span>{("0" + Math.floor((time / 1000) % 60)).slice(-2)}:</span>
-          <span className="text-5xl">
+          <span className="text-2xl md:text-5xl">
             {("0" + ((time / 10) % 100)).slice(-2)}
           </span>
         </div>
@@ -39,7 +39,7 @@ export const ChronometerView = () => {
       <div className="flex flex-col justify-center items-center">
         {!timerOn && time === 0 && (
           <button
-            className="btn border-none w-20 m-1 bg-btn-green text-white rounded-xl"
+            className="btn border-none w-14 md:w-20 m-1 bg-btn-green text-white rounded-xl"
             onClick={() => setTimeOn(true)}
           >
             <FontAwesomeIcon icon={faPlay} />
@@ -48,7 +48,7 @@ export const ChronometerView = () => {
 
         {timerOn && (
           <button
-            className="btn border-none w-20 m-1 bg-btn-red text-white rounded-xl"
+            className="btn border-none w-14 md:w-20 m-1 bg-btn-red text-white rounded-xl"
             onClick={() => setTimeOn(false)}
           >
             <FontAwesomeIcon icon={faPause} />
@@ -57,7 +57,7 @@ export const ChronometerView = () => {
 
         {!timerOn && time !== 0 && (
           <button
-            className="btn border-none w-20 m-1 bg-btn-green text-white rounded-xl"
+            className="btn border-none w-14 md:w-20 m-1 bg-btn-green text-white rounded-xl"
             onClick={() => setTimeOn(true)}
           >
             <FontAwesomeIcon icon={faPlay} />
@@ -65,7 +65,7 @@ export const ChronometerView = () => {
         )}
 
         <button
-          className="btn border-none w-20 m-1 bg-primary text-white rounded-xl"
+          className="btn border-none w-14 md:w-20 m-1 bg-primary text-white rounded-xl"
           onClick={() => setTime(0)}
         >
           <FontAwesomeIcon icon={faArrowRotateLeft} />
