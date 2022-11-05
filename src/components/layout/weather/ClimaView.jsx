@@ -58,7 +58,6 @@ export const ClimaView = () => {
         setShow(false);
       });
   };
-
   const city = useSelector((state) =>
     state.city.name ? state.city.name.toUpperCase() : ""
   );
