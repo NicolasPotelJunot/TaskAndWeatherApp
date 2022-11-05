@@ -34,7 +34,7 @@ export const HeaderView = () => {
         <div className="w-full">
           <div className="px-5">
             <img
-              src="../../public/logo.svg"
+              src="logo.svg"
               alt="logo NikAgenda"
               className="w-24"
             />
