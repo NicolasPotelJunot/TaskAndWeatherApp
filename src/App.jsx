@@ -10,7 +10,7 @@ import { persistStore } from 'redux-persist'
 
 let persistor = persistStore(store)
 
-function ProviderApp() {
+export const App = () =>{
 
   return (
     <Provider store={store}>
@@ -21,4 +21,3 @@ function ProviderApp() {
   )
 }
 
-export default ProviderApp
