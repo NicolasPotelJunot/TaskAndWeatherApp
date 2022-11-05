@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { Card } from "./Card";
+import { ResultWeather } from "./result/ResultWeather";
 import { ClimaForm } from "./ClimaForm";
+import { useSelector } from "react-redux";
 
 export const ClimaView = () => {
   let urlWeather = `https://api.openweathermap.org/data/2.5/weather?appid=88dc9b4625213920bd30a8fe5ca04ef4&lang=es`;
@@ -58,14 +59,23 @@ export const ClimaView = () => {
       });
   };
 
+  const city = useSelector((state) =>
+    state.city.name ? state.city.name.toUpperCase() : ""
+  );
+
   return (
-    <div className="h-screen w-screen flex justify-center items-center animate__animated animate__fadeIn">
-      <div className="flex flex-col bg-white w-1/3 h-3/4 rounded-lg p-5">
+    <div className="pt-24 pb-10 lg:p-0 mx-auto flex justify-center items-center animate__animated animate__fadeIn px-5 min-h-screen xl:w-screen">
+      <div className="flex flex-col bg-white rounded-lg xl:p-5 ">
         <div className="grid gap-5 p-5 text-center rounded-xl mb-1">
-          <h2 className="text-2xl font-bold text-dark">Busca el clima de tu ciudad</h2>
+          <h2 className="text-xl md:text-2xl font-bold text-dark">
+            Busca el clima de tu ciudad
+          </h2>
           <ClimaForm newLocation={getLocation} />
+          <h3 className="text-dark font-bold text-3xl mx-auto pb-2 border-b-4 border-primary ">
+            {city}
+          </h3>
         </div>
-        <Card
+        <ResultWeather
           showData={show}
           loadingData={loading}
           weather={weather}
