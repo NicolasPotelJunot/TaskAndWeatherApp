@@ -63,7 +63,7 @@ export const ClimaView = () => {
   );
 
   return (
-    <div className="pt-24 pb-10 lg:p-0 mx-auto flex justify-center items-center animate__animated animate__fadeIn px-5 min-h-screen xl:w-screen">
+    <div className="pt-24 pb-10 px-2 lg:p-0 mx-auto flex justify-center items-center animate__animated animate__fadeIn min-h-screen xl:w-screen">
       <div className="flex flex-col bg-white rounded-lg xl:p-5 ">
         <div className="grid gap-5 p-5 text-center rounded-xl mb-1">
           <h2 className="text-xl md:text-2xl font-bold text-dark">
