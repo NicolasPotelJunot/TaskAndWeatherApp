@@ -21,6 +21,14 @@
   background: var(--gradient);
 }
 
+.btn {
+  padding: 10px 10px;
+}
+
+.btn:active {
+  transform: scale(0.95);
+}
+
 .bg-btn-green {
   background: var(--green);
 }

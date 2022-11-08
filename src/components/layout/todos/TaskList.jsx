@@ -30,7 +30,7 @@ export const TaskList = () => {
 
       <div className=" flex flex-col justify-between mt-6 md:pl-5 rounded-xl">
         <div className="h-52 md:h-96 xl:h-52 2xl:h-96 scroll-m-0 overflow-auto">
-          <div className="task-width h-full">
+          <div className="task-width h-full px-2">
             {taskState.length === 0 ? (
               <p className="h-full w-full font-bold text-lg md:text-xl text-center m-auto flex justify-center items-center">
                 ¡Agrega tareas y cumple tus metas!
@@ -48,14 +48,14 @@ export const TaskList = () => {
                   <div className="col-span-1 flex justify-end items-center">
                     <button
                       onClick={() => handleEdit(task)}
-                      className="btn bg-btn-green border-none text-white rounded-full mx-1"
+                      className="btn bg-btn-green border-none text-white rounded-full px-3 mx-1"
                     >
                       <FontAwesomeIcon icon={faPen} />
                     </button>
 
                     <button
                       onClick={() => handleDelete(task)}
-                      className="btn bg-btn-red border-none text-white rounded-full mx-1"
+                      className="btn bg-btn-red border-none text-white rounded-full px-3 mx-1"
                     >
                       <FontAwesomeIcon icon={faTrashCan} />
                     </button>
@@ -66,16 +66,13 @@ export const TaskList = () => {
           </div>
         </div>
 
-        <div className="card ">
-          <div className="card-body">
-            <button
-              onClick={() => dispatch(openFormModal(true))}
-              className="btn bg-primary text-white text-4xl ease-in duration-400 m-auto rounded-full text-center h-32 w-32 border-none p-4"
-            >
-              <FontAwesomeIcon icon={faPlus} />
-            </button>
-          </div>
-        </div>
+        <button
+          onClick={() => dispatch(openFormModal(true))}
+          className="btn bg-primary text-white text-4xl ease-in mb-5 duration-400 m-auto rounded-full text-center h-32 w-32 border-none p-4"
+        >
+          <FontAwesomeIcon icon={faPlus} />
+        </button>
+
       </div>
     </section>
   );
