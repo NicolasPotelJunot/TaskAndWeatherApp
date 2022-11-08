@@ -40,7 +40,7 @@ export const WeatherNextHours = ({ forecast, weather }) => {
         Clima en las próximas horas
       </h3>
 
-      <div className="grid grid-cols-3 md:gap-3 2xl:gap-0">
+      <div className="grid grid-cols-3 md:gap-3 2xl:gap-0 items-start">
         <article className=" text-center grid justify-center pt-4">
           <p className="text-2xl md:text-3xl text-primary font-bold pb-1">
             {(forecast.list[1].main.temp - 273.15).toFixed(1)}ºC
@@ -49,7 +49,7 @@ export const WeatherNextHours = ({ forecast, weather }) => {
           <div className="h-16 overflow-hidden flex justify-center items-center">
             <img src={iconUrl3} alt="icon" className="h-28" />
           </div>
-          <p className="bg-btn-violet-noHover text-white rounded-xl m-auto py-1 px-2 md:px-4 text-sm h-8 text-center">
+          <p className="bg-btn-violet-noHover text-white rounded-xl m-auto py-1 px-2 md:px-4 text-sm text-center">
             {forecast.list[1].weather[0].description}
           </p>
         </article>
@@ -61,7 +61,7 @@ export const WeatherNextHours = ({ forecast, weather }) => {
           <div className="h-16 overflow-hidden flex justify-center items-center">
             <img src={iconUrl6} alt="icon" className="h-28" />
           </div>
-          <p className="bg-btn-violet-noHover text-white rounded-xl m-auto py-1 px-2 md:px-4 text-sm h-8 text-center">
+          <p className="bg-btn-violet-noHover text-white rounded-xl m-auto py-1 px-2 md:px-4 text-sm text-center">
             {forecast.list[2].weather[0].description}
           </p>
         </article>
@@ -73,7 +73,7 @@ export const WeatherNextHours = ({ forecast, weather }) => {
           <div className="h-16 overflow-hidden flex justify-center items-center">
             <img src={iconUrl9} alt="icon" className="h-28" />
           </div>
-          <p className="bg-btn-violet-noHover text-white rounded-xl m-auto py-1 px-2 md:px-4 text-sm h-8 text-center">
+          <p className="bg-btn-violet-noHover text-white rounded-xl m-auto py-1 px-2 md:px-4 text-sm text-center">
             {forecast.list[3].weather[0].description}
           </p>
         </article>

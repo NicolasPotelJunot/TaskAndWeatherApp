@@ -20,7 +20,7 @@ export const WeatherNow = (weatherProps) => {
           <div className="h-20 overflow-hidden flex justify-end lg:justify-center items-center">
             <img src={iconUrl} alt="icon" className="h-36" />
           </div>
-          <p className="bg-btn-violet-noHover text-white rounded-xl w-32 text-center py-1 px-4 h-8 lg:mx-auto">
+          <p className="bg-btn-violet-noHover text-white rounded-xl w-32 text-center py-1 px-4 lg:mx-auto">
             {weatherProps.weatherProps.weather[0].description}
           </p>
         </div>
