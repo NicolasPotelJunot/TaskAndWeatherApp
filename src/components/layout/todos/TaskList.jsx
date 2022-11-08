@@ -48,14 +48,14 @@ export const TaskList = () => {
                   <div className="col-span-1 flex justify-end items-center">
                     <button
                       onClick={() => handleEdit(task)}
-                      className="btn bg-btn-green border-none text-white rounded-full px-3 mx-1"
+                      className="btn bg-btn-green border-none text-white text-sm md:text-base rounded-full px-3 mx-1"
                     >
                       <FontAwesomeIcon icon={faPen} />
                     </button>
 
                     <button
                       onClick={() => handleDelete(task)}
-                      className="btn bg-btn-red border-none text-white rounded-full px-3 mx-1"
+                      className="btn bg-btn-red border-none text-white text-sm md:text-base rounded-full px-3 mx-1"
                     >
                       <FontAwesomeIcon icon={faTrashCan} />
                     </button>
