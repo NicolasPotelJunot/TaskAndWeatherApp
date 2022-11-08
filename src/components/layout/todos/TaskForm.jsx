@@ -10,6 +10,7 @@ import { openFormModal } from "../../../stateManagement/slicers/formSlice";
 
 import "./TaskList.css";
 import "../../../styles/generalStyles.css";
+import { TextField } from "@mui/material";
 
 export const TaskForm = () => {
   const nombre = useSelector((state) => state.id.id);
@@ -73,32 +74,33 @@ export const TaskForm = () => {
           <div className="z-20 flex justify-center justify-items-center items-center">
             <div className="bg-white shadow-2xl shadow-gray-600 p-6 rounded-xl animate__animated animate__headShake">
               <button
-                className="btn bg-primary border-none text-white px-2 rounded-full text-3xl"
+                className="btn bg-primary border-none text-white px-2 rounded-full text-3xl px-3"
                 onClick={() => dispatch(openFormModal(false))}
               >
                 <FontAwesomeIcon icon={faCircleArrowLeft} />
               </button>
 
-              <form className="w-64 sm:w-80 md:w-96 flex flex-col my-2" onSubmit={handleSubmit}>
-                <input
-                  className="input bg-gray-200 required w-full my-3"
+              <form
+                className="w-64 sm:w-80 md:w-96 grid gap-5 my-2 py-5"
+                onSubmit={handleSubmit}
+              >
+                <TextField
+                  label="Tarea"
+                  variant="outlined"
                   name="title"
-                  type="text"
-                  placeholder="Tarea"
                   onChange={handleChange}
                   value={task.title}
-                />
-                <input
                   required
-                  className="textarea bg-gray-200 my-3 h-16"
+                />
+                <TextField
+                  label="Descripción"
+                  variant="outlined"
                   name="description"
-                  placeholder="Descripción"
                   onChange={handleChange}
                   value={task.description}
-                  maxlength="50"
-                ></input>
+                />
                 <button
-                  className="btn bg-primary border-none text-white my-3"
+                  className="btn bg-primary border-none text-white my-3 rounded-xl"
                   onSubmit={handleSubmit}
                 >
                   Guardar

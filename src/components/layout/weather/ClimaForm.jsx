@@ -1,6 +1,10 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+
+import { TextField } from "@mui/material";
+
 import { changeCity } from "../../../stateManagement/slicers/weatherSlice";
+import "../../../styles/generalStyles.css";
 
 export const ClimaForm = ({ newLocation = "" }) => {
   const [cityState, setCityState] = useState();
@@ -30,17 +34,31 @@ export const ClimaForm = ({ newLocation = "" }) => {
       onSubmit={handleSubmit}
       className="form-control w-full xl:pl-5 mx-auto"
     >
-      <div className="input-group flex justify-center">
-        <input
+      <div className="input-group flex justify-center ">
+        {/* <input
           type="text"
           placeholder="El clima en..."
           onChange={handleChange}
           className="input input-bordered bg-white w-full text-2xl text-primary"
-        />
+        /> */}
+        <div className="w-3/4 flex items-end">
+          <TextField
+            type="text"
+            onChange={handleChange}
+            fullWidth
+            variant="standard"
+            label="El clima en..."
+          />
+        </div>
 
-        <button type="submit" className="btn bg-primary text-white border-none">
-          Buscar
-        </button>
+        <div className="btn bg-primary block text-white border-none rounded-r-xl">
+          <button
+            type="submit"
+            className=""
+          >
+            Buscar
+          </button>
+        </div>
       </div>
     </form>
   );
